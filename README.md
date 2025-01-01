@@ -4,7 +4,7 @@ This library creates an easy virtual joystick for love2d games.
 
 ## Instalation
 
-Just require in your script and set function, like this setup.
+Just download and require in your script and set function, like this setup.
 
 ```lua
 require "Vjoy"
