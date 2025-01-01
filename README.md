@@ -1,4 +1,4 @@
-# Vjoy for LÖVE
+# Vijoy for LÖVE
 
 This library creates an easy virtual joystick for love2d games.
 
