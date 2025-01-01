@@ -7,30 +7,30 @@ This library creates an easy virtual joystick for love2d games.
 Just download and require in your script and set function, like this setup.
 
 ```lua
-require "Vjoy"
+require "Vijoy"
 
 function love.load()
-  Vjoy = new("fixed", 100, 200, 30)
+  Vijoy = new("fixed", 100, 200, 30)
 end
 
 function love.draw()
-  Vjoy.draw(...)
+  Vijoy.draw(...)
 end
 
 function love.update(dt)
-  Vjoy.update(dt)
+  Vijoy.update(dt)
 end
 
 function love.touchpressed(id, x, y, dx, dy, pressure)
-  Vjoy.pressed(id, x, y, dx, dy)
+  Vijoy.pressed(id, x, y, dx, dy)
 end
 
 function love.touchmoved(id, x, y, dx, dy, pressure)
-  Vjoy.moved(id, x, y, dx, dy)
+  Vijoy.moved(id, x, y, dx, dy)
 end
 
 function love.touchreleased(id, x, y, dx, dy, pressure)
-  Vjoy.released(id, x, y, dx, dy, pressure)
+  Vijoy.released(id, x, y, dx, dy, pressure)
 end
 ```
 
@@ -74,25 +74,25 @@ end
 
 **Example:**
 ```lua
-Vjoy = new("fixed", 100, 200, 30, 0.1, 1.8, mageJoy, ImageSticky)
+Vijoy = new("fixed", 100, 200, 30, 0.1, 1.8, mageJoy, ImageSticky)
 ```
 
 **Synopsis:**
 
 This function creates a new virtual joystick
 
-OBS: the variable declared here, in this case `Vjoy`, is used in anothers places!
+OBS: the variable declared here, in this case `Vijoy`, is used in anothers places!
 
 **Arguments**
-- `mode`: The [joyMode](#modes) of vjoy.
+- `mode`: The [joyMode](#modes) of Vijoy.
 
-- `x`: The position in the x axis of the vjoy.
-- `y`: The position in the y axis of the vjoy.
-- `ray`: The ray of the vjoy.
+- `x`: The position in the x axis of the Vijoy.
+- `y`: The position in the y axis of the Vijoy.
+- `ray`: The ray of the Vijoy.
 - `t` *(optional)*: The "time" to joy stick go to the center. You can just set to `nil` to keep the original value.
-- `activeRay` *(optional)*: The value for the active area of vjoy. This value is multiplied to the ray.
-- `joyImg` *(optional)*: The image to the ray of vjoy. Get by `love.graphics.newImage`. The image will auto scaled.
-- `stickImg` *(optional)*: The image to the stick of vjoy. Get by `love.graphics.newImage`. The image will auto scaled.
+- `activeRay` *(optional)*: The value for the active area of Vijoy. This value is multiplied to the ray.
+- `joyImg` *(optional)*: The image to the ray of Vijoy. Get by `love.graphics.newImage`. The image will auto scaled.
+- `stickImg` *(optional)*: The image to the stick of Vijoy. Get by `love.graphics.newImage`. The image will auto scaled.
 
 **Returns**
 - *Nothing*
@@ -104,13 +104,13 @@ OBS: the variable declared here, in this case `Vjoy`, is used in anothers places
 **Example:**
 ```lua
 function love.draw()
-  Vjoy.draw(1, 0, 0.5, 1, "line", 0, 255, 125, 255)
+  Vijoy.draw(1, 0, 0.5, 1, "line", 0, 255, 125, 255)
 end
 ```
 
 **Synopsis:**
 
-This function it's required for vjoy works. This function actualy returns nothing but can used to change vjoy's color and fillMode of circle (if not heave image).
+This function it's required for Vijoy works. This function actualy returns nothing but can used to change Vijoy's color and fillMode of circle (if not heave image).
 
 If some color1 are nil, will set by 1, but if some color2 are nil, will set by color1 equivalet.
 
@@ -148,10 +148,10 @@ This function set the number that will be set in lerp (linear interploration).
 ### *`setJoyX(x)`*
 
 **Synopsis:**
-This function set the position in the x axis of vjoy.
+This function set the position in the x axis of Vijoy.
 
 **Arguments**
-- `x`: The position in the x axis of the vjoy.
+- `x`: The position in the x axis of the Vijoy.
 
 **Returns**
 - *Nothing*
@@ -161,10 +161,10 @@ This function set the position in the x axis of vjoy.
 ### *`setJoyY(y)`*
 
 **Synopsis:**
-This function set the position in the y axis of vjoy.
+This function set the position in the y axis of Vijoy.
 
 **Arguments**
-- `y`: The position in the y axis of the vjoy.
+- `y`: The position in the y axis of the Vijoy.
 
 **Returns**
 - *Nothing*
@@ -174,11 +174,11 @@ This function set the position in the y axis of vjoy.
 ### *`setJoyPosition(x, y)`*
 
 **Synopsis:**
-This function set the position of vjoy.
+This function set the position of Vijoy.
 
 **Arguments**
-- `x`: The position in the x axis of the vjoy.
-- `y`: The position in the y axis of the vjoy.
+- `x`: The position in the x axis of the Vijoy.
+- `y`: The position in the y axis of the Vijoy.
 
 **Returns**
 - *Nothing*
@@ -188,7 +188,7 @@ This function set the position of vjoy.
 ### *`setActiveRay(r)`*
 
 **Synopsis:**
-This function set the `activeRay` of vjoy. This number will multiplied by ray.
+This function set the `activeRay` of Vijoy. This number will multiplied by ray.
 
 **Arguments**
 - The number that will be multiplied by ray.
@@ -200,10 +200,10 @@ This function set the `activeRay` of vjoy. This number will multiplied by ray.
 ### *`setJoyRay(r)`*
 
 **Synopsis:**
-This function set the ray of vjoy.
+This function set the ray of Vijoy.
 
 **Arguments**
-- `r`: The ray of vjoy.
+- `r`: The ray of Vijoy.
 
 **Returns**
 - *Nothing*
@@ -240,82 +240,82 @@ This function set the image of stick. The image will auto scaled.
 ### *`getAxis(dP)`*
 
 **Synopsis:**
-This function returns the distance of vjoy's axis.
+This function returns the distance of Vijoy's axis.
 The number is between -1 and 1, and you can set the decimal houses you wanted.
 
 **Arguments**
 - `dP`: The decimal places of number, the bigger number, more accurate.
 
 **Returns**
-- The distance of axis between -1 and 1 of stick of vjoy.
+- The distance of axis between -1 and 1 of stick of Vijoy.
 
 <div id="fun-gt-x"/>
 
 ### *`getX(dP)`*
 
 **Synopsis:**
-This function returns the distance in x axis of vjoy.
+This function returns the distance in x axis of Vijoy.
 The number is between -1 and 1, and you can set the decimal houses you wanted.
 
 **Arguments**
 - `dP`: The decimal places of number, the bigger number, more accurate.
 
 **Returns**
-- The distance in x axis between -1 and 1 of stick of vjoy.
+- The distance in x axis between -1 and 1 of stick of Vijoy.
 
 <div id="fun-gt-y"/>
 
 ### *`getY(dP)`*
 
 **Synopsis:**
-This function returns the distance in y axis of vjoy.
+This function returns the distance in y axis of Vijoy.
 The number is between -1 and 1, and you can set the decimal houses you wanted.
 
 **Arguments**
 - `dP`: The decimal places of number, the bigger number, more accurate.
 
 **Returns**
-- The distance in y axis between -1 and 1 of stick of vjoy.
+- The distance in y axis between -1 and 1 of stick of Vijoy.
 
 <div id="fun-gt-joy-x"/>
 
 ### *`getJoyX()`*
 
 **Synopsis:**
-This function returns the x axis position of vjoy.
+This function returns the x axis position of Vijoy.
 
 **Arguments**
 - *Nothing*
 
 **Returns**
-- The x position of the vjoy.
+- The x position of the Vijoy.
 
 <div id="fun-gt-joy-y"/>
 
 ### *`getJoyY()`*
 
 **Synopsis:**
-This function returns the y axis position of vjoy.
+This function returns the y axis position of Vijoy.
 
 **Arguments**
 - *Nothing*
 
 **Returns**
-- The y position of the vjoy.
+- The y position of the Vijoy.
 
 <div id="fun-gt-joy-pos"/>
 
 ### *`getJoyPosition()`*
 
 **Synopsis:**
-This function returns the position of vjoy. That's not
+This function returns the position of Vijoy. That's not
 the stick!
 
 **Arguments**
 - *Nothing*
 
 **Returns**
-- The position x, and y of vjoy.
+- The position x, and y of Vijoy.
 
 <div id="fun-gt-angle"/>
 
@@ -330,7 +330,7 @@ This function returns the angle in rad (standard unit of measurement).
 - *Nothing*
 
 **Returns**
-The angle in radians of vjoy.
+The angle in radians of Vijoy.
 
 <div id="fun-gt-angledg"/>
 
@@ -345,7 +345,7 @@ This function returns the angle in degrees.
 - *Nothing*
 
 **Returns**
-- The angle in degrees of vjoy.
+- The angle in degrees of Vijoy.
 
 <div id="fun-gt-anglegd"/>
 
@@ -360,7 +360,7 @@ This function returns the angle in grado.
 - Nothing
 
 **Returns**
-- The angle in gon (grado) of vjoy.
+- The angle in gon (grado) of Vijoy.
 
 <div id="fun-gt-active-ray"/>
 
@@ -368,7 +368,7 @@ This function returns the angle in grado.
 
 **Synopsis:**
 This function returns the `activeRay`, a number when
-multiplied by ray, set the activable area of vjoy.
+multiplied by ray, set the activable area of Vijoy.
 
 **Arguments**
 - *Nothing*
@@ -381,13 +381,13 @@ multiplied by ray, set the activable area of vjoy.
 ### *`getRay()`*
 
 **Synopsis:**
-This function returns the ray of vjoy.
+This function returns the ray of Vijoy.
 
 **Arguments**
 - *Nothing*
 
 **Returns**
-- The ray of vjoy.
+- The ray of Vijoy.
 
 ## Modes
 
@@ -396,7 +396,7 @@ This library heave (for now) 2 modes to use, `"fixed"` or `"free"`.
 <div id="md-fix"/>
 
 ### *`"fixed"`*
-Like others virtual joystick, this mode set and put the vjoy
+Like others virtual joystick, this mode set and put the Vijoy
 in the position and when touch, don't change position.
 
 <div id="md-free"/>
