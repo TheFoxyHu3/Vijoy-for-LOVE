@@ -1,6 +1,6 @@
 # Vjoy for LÖVE
 
-This library creates an easy virtual joystick.
+This library creates an easy virtual joystick for love2d games.
 
 ## Instalation
 
