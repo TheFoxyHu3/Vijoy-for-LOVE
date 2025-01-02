@@ -383,7 +383,8 @@ multiplied by ray, set the activable area of Vijoy.
 **Synopsis:**
 This function returns the ray of Vijoy.
 
-[comment]: # (**Arguments**- *Nothing*)
+**Arguments**-
+- *Nothing*
 
 **Returns**
 - The ray of Vijoy.
